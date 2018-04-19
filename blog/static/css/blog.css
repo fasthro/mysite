@@ -163,10 +163,15 @@ body{
 }
 
 .home-banner{
-    background: url(../img/home-bg.jpg) center;
+    background: url(../img/home_banner.jpg) center;
     min-height: 350px;
 }
 
+.shadow{
+    min-height: 350px;
+    width: inherit;
+    background: rgba(0, 0, 0, 0.5);
+}
 /** */
 
 .main-footer{
