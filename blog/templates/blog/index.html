@@ -1,19 +1,24 @@
 {% extends "base.html" %}
 
-{% block banner %}
-     <div class="col-md-12">
-        <div class="home-banner">
-            <div class="shadow"></div>
-        </div>
-    </div>
+{% block jumbotron %}
+     <div class="jumbotron fh-jumbotron">
+         <div class="fh-jumbotron-img"></div>
+        <div class="fh-jumbotron-mask"></div>
+     </div>
 {% endblock %}
 
 {% block main %}
     <div class="main-article">
-        <div class="article-list">
-            {% include "article.html" %}
-            {% include "article.html" %}
-            {% include "article.html" %}
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-sm-12">
+                {% include "article.html" %}
+                {% include "article.html" %}
+                {% include "article.html" %}
+            </div>
+            <div class="col-lg-1 col-md-1 visible-sm visible-lg visible-md"></div>
+            <div class="col-lg-3 col-md-3 visible-sm visible-lg visible-md">
+                {% include "author.html" %}
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -9,6 +9,7 @@
 
         <!-- Bootstrap -->
         <link href="../static/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="../static/font-awesome-4.7.0/css/font-awesome.min.css">
         <link href="../static/css/blog.css" rel="stylesheet">
         {% block css %} {% endblock %}
 
@@ -21,11 +22,9 @@
   </head>
   <body>
     {% include "nav.html" %}
-    <div class="main">
-        {% block banner %} {% endblock %}
-        <div id="content" class="container">
-            {% block main %} {% endblock %}
-        </div>
+    {% block jumbotron %} {% endblock %}
+    <div class="fh-main container">
+        {% block main %} {% endblock %}
     </div>
     {% include "footer.html" %}
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
