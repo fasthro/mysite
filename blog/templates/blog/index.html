@@ -8,13 +8,18 @@
 {% endblock %}
 
 {% block main %}
-
     <div class="main-article">
         <div class="row">
             <div class="col-lg-8 col-md-8 col-sm-12 col-sm-12">
                 {% for article in object_list %}
                     {% include "article.html" %}
                 {% endfor %}
+                <nav aria-label="...">
+                    <ul class="pager">
+                        <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
+                        <li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                    </ul>
+                </nav>
             </div>
             <div class="col-lg-1 col-md-1 visible-sm visible-lg visible-md"></div>
             <div class="col-lg-3 col-md-3 visible-sm visible-lg visible-md">

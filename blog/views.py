@@ -8,6 +8,7 @@ from blog_article.models import Article, ArticleTag
 class MainView(ListView):
     model = Article
     template_name = "../templates/blog/index.html"
+    paginate_by = 8
 
     def get_context_data(self, **kwargs):
         context = super(MainView, self).get_context_data(**kwargs)

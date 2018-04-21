@@ -11,7 +11,7 @@ body{
 /** nav */
 .fh-navbar
 {
-    background-color: #212121;
+    background-color: #343a40!important;
     border-bottom: 1px solid rgba(255,255,255,0.1);
     border-radius: 0;
 }
@@ -27,34 +27,43 @@ body{
 .fh-navbar-brand {
     width: 155px;
     display: block;
-    border-bottom: 1px solid transparent;
+    border-bottom: .25rem solid transparent;
     transition: all 0.2s;
 }
 
 .fh-navbar-brand:hover{
-    border-bottom-color: yellow;
+    border-bottom-color: white;
 }
 
 .fh-navbar-nav li{
     list-style-type: none;
     margin-right: 20px;
-    border-bottom: 1px solid transparent;
+    border-bottom: .25rem solid transparent;
     transition: all 0.2s;
 }
 
 .fh-navbar-nav li:hover{
-    border-bottom-color: yellow;
+    border-bottom-color: white;
 }
 
 .fh-navbar-nav li>a{
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 50px;
     text-decoration: none;
 }
 
+.fh-navbar-toggle{
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: .25rem;
+    color: rgba(255,255,255,.5);
+}
+
 .fh-icon-bar{
-   background: white;
+   background: rgba(255,255,255,.5);
 }
 
 /** jumbotron  */
@@ -79,7 +88,7 @@ body{
 
 /** footer */
 .main-footer{
-    background-color: #212121;
+    background-color: #343a40!important;
     border-top: 1px solid rgba(230,230,230,0.75);
     width: 100%;
     min-height: 80px;
@@ -92,7 +101,7 @@ body{
 }
 
 .main-footer span{
-    color: #959595;
+    color: #6c757d!important;
 }
 
 /** 主页文章 */
@@ -154,7 +163,7 @@ body{
 }
 
 .fh-article-data-view span{
-    color: #6B6B6Bab;
+    color: #6c757d!important;
 }
 
 /** article abs */

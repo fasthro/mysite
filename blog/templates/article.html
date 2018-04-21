@@ -10,9 +10,15 @@
     </div>
     <div class="row fh-article-tag-view">
        <div class="fh-article-data-view pull-left">
-           <span class="label glyphicon glyphicon-calendar">{{ article.create_time | date:"Y-m-d" }}</span>
-           <span class="label glyphicon glyphicon glyphicon-comment">{{ article.comments_num }}</span>
-           <span class="label glyphicon glyphicon-eye-open">{{ article.browse_num }}</span>
+           <span class="label glyphicon glyphicon-calendar">
+               <spqn class="fh-article-data">{{ article.create_time | date:"Y-m-d" }}</spqn>
+           </span>
+           <span class="label glyphicon glyphicon glyphicon-comment">
+               <span class="fh-article-data">{{ article.comments_num }}</span>
+           </span>
+           <span class="label glyphicon glyphicon-eye-open">
+               <span class="fh-article-data">{{ article.browse_num }}</span>
+           </span>
        </div>
        <div class="fh-article-tag pull-right visible-lg visible-md visible-sm">
            {% for tag in article.get_tags %}
