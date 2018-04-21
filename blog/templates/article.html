@@ -2,23 +2,22 @@
    <div class="fh-article-title-view">
        <div class="fh-article-subtitle-view pull-left visible-lg visible-md visible-sm">
             <div class="fh-article-subtitle">
-               <span>django</span>
+               <span>{{ article.type.name }}</span>
            </div>
            <div class="fh-artucle-subtitle-arrow"></div>
        </div>
-       <a class="fh-article-title h2" href="">Smoke材质的二三事</a>
+       <a class="fh-article-title h2" href="">{{ article.title }}</a>
     </div>
     <div class="row fh-article-tag-view">
        <div class="fh-article-data-view pull-left">
-           <span class="label glyphicon glyphicon-calendar">2018-04-19 15:13</span>
-           <span class="label glyphicon glyphicon glyphicon-comment">2025</span>
-           <span class="label glyphicon glyphicon-eye-open">1254</span>
+           <span class="label glyphicon glyphicon-calendar">{{ article.create_time | date:"Y-m-d" }}</span>
+           <span class="label glyphicon glyphicon glyphicon-comment">{{ article.comments_num }}</span>
+           <span class="label glyphicon glyphicon-eye-open">{{ article.browse_num }}</span>
        </div>
        <div class="fh-article-tag pull-right visible-lg visible-md visible-sm">
-           <span class="label label-success">Success</span>
-           <span class="label label-info">Info</span>
-           <span class="label label-warning">Warning</span>
-           <span class="label label-danger">Danger</span>
+           {% for tag in article.get_tags %}
+               <span class="label {{ tag.tag_label_style }}">{{ tag.name }}</span>
+           {% endfor %}
        </div>
    </div>
     <hr>
@@ -26,16 +25,14 @@
         <div class="fh-article-img col-lg-4 col-md-4 col-sm-4">
             <div class="thumbnail">
                 <a href="">
-                    <img src="../../static/img/article/title/article-title.png">
+                    <img src={{ article.img }}>
                 </a>
             </div>
         </div>
         <div class="fh-article-abstract col-lg-8 col-md-8 col-sm-8">
             <a href="">
                 <p>
-                    更新日志 2015/5/15 从django1.6 升级到 django1.8 (git中还保留django1.6 分支)
-                    概述 vmaig_blog 是一个基于 Django1.8 跟 Bootstrap3 开发的 博客系统 ，实现了一个博客完整的功能。
-                    http://vmaig.com 就是基于vmaig_blog 搭建的。 实现功能 1. 文章,分类,专栏的添加，删除，修改。支持tin ...
+                    {{ article.abstract }}
                 </p>
             </a>
         </div>

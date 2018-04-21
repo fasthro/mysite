@@ -1,24 +1,23 @@
 <div class="fh-author-view">
     <div class="fh-author-tag-view">
         <hr>
-        <a href="">FEATURED TAGS</a>
+        <a href="tag">FEATURED TAGS</a>
 
         <div class="row fh-author-tag">
-            <a href="" class="btn btn-default btn-sm">闲谈</a>
-            <a href="" class="btn btn-default btn-sm">闲谈闲谈</a>
-            <a href="" class="btn btn-default btn-sm">闲谈闲谈闲谈</a>
-            <a href="" class="btn btn-default btn-sm">闲谈闲谈</a>
+            {% for tag in tags %}
+                <a href="tag/{{ tag.tag_id }}" class="btn btn-default btn-sm">{{ tag.name }}</a>
+            {% endfor %}
         </div>
         <hr>
     </div>
     <div class="fh-author-me-view">
-        <a href="">ABOUT ME</a>
+        <a href="about">ABOUT ME</a>
         <div class="fh-author-me-head">
-            <img src="../static/img/head/default-head.jpg" alt="" width="162" height="150">
+            <img src="{{ author.head }}" alt="" width="162" height="150">
         </div>
         <div class="fh-author-me-info">
             <p>
-                由于上学时候总是通过各种手段去跑网吧玩游戏，上天看在我的执着和勇气，送给了我一次机缘，最终走上了游戏开发之路。
+                {{ author.introduction }}
             </p>
         </div>
     </div>

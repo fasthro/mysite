@@ -4,4 +4,4 @@ from django.contrib import admin
 
 from blog_user import models
 
-admin.register(models.BUser)
+admin.site.register(models.BUser)

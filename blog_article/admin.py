@@ -4,5 +4,6 @@ from django.contrib import admin
 
 from blog_article import models
 
-admin.register(models.BArticleCategory)
-admin.register(models.BArticle)
+admin.site.register(models.ArticleTag)
+admin.site.register(models.ArticleType)
+admin.site.register(models.Article)
