@@ -1,6 +1,8 @@
 from datetime import datetime
 from django.db import models
 from django.conf import settings
+from blog import conf
+
 
 # 文章标签定义
 class ArticleTag(models.Model):
@@ -25,6 +27,11 @@ class ArticleTag(models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        db_table = "article_tag"
+        verbose_name = '文章标签'
+
+
 # 文章标签定义
 class ArticleType(models.Model):
     '''
@@ -41,6 +48,11 @@ class ArticleType(models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        db_table = "article_type"
+        verbose_name = '文章类型'
+
+
 class Article(models.Model):
     '''
     文章数据模型
@@ -49,13 +61,13 @@ class Article(models.Model):
     type = models.ForeignKey(ArticleType, verbose_name='文章类型', on_delete=models.CASCADE)
     title = models.CharField(max_length=100, verbose_name='文章标题')
     subtitle = models.CharField(max_length=100, default='', verbose_name='文章副标题')
-    img = models.CharField(max_length=200, verbose_name='展示图片')
+    img = models.CharField(max_length=200, default=conf.DEFAULT_ARTICLE_IMG_URL, verbose_name='展示图片')
     tags = models.CharField(max_length=200, verbose_name='标签', help_text="填写Tag标识Id，多个用|分割")
     abstract = models.TextField(verbose_name='文章摘要')
     content = models.TextField(verbose_name='正文')
     create_time = models.DateTimeField(verbose_name='创建日期')
-    modify_time = models.DateTimeField(verbose_name='修改日期')
-    browse_num = models.IntegerField(default=0, verbose_name='赞数量')
+    modify_time = models.DateTimeField(default=datetime.now(), verbose_name='修改日期')
+    praise_num = models.IntegerField(default=0, verbose_name='赞数量')
     comments_num = models.IntegerField(default=0, verbose_name='评论数量')
     browse_num = models.IntegerField(default=0, verbose_name='浏览数量')
 
@@ -75,3 +87,7 @@ class Article(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    class Meta:
+        db_table = "article"
+        verbose_name = '文章'

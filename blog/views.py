@@ -2,13 +2,13 @@ from django.views.generic.list import ListView
 from django.views.generic import DetailView
 from  blog_user.models import BUser
 from blog_article.models import Article, ArticleTag
-
+from blog import conf
 
 # 主页
 class MainView(ListView):
     model = Article
     template_name = "../templates/blog/index.html"
-    paginate_by = 8
+    paginate_by = conf.MAIN_PAGE_NUM
 
     def get_context_data(self, **kwargs):
         context = super(MainView, self).get_context_data(**kwargs)
