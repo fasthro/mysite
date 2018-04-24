@@ -11,7 +11,7 @@ STATIC_ARCTLE_URL = STATIC_IMG_URL + 'article/'
 
 
 # main view conf
-MAIN_PAGE_NUM = 2
+MAIN_PAGE_NUM = 5
 
 # article conf
 

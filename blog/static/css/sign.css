@@ -48,6 +48,18 @@ body {
   border-top-right-radius: 0;
 }
 
+.wrap{
+  background-color: #fff;
+  padding-bottom: 10px;
+  -moz-box-shadow: 0 1px 4px #ccc;
+  -webkit-box-shadow: 0 1px 4px #ccc;
+  box-shadow: 0 1px 4px #ccc;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 30px 40px;
+}
+
 .tc-212529{
     color: #212529;
 }
