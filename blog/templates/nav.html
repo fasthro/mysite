@@ -14,9 +14,19 @@
         </div>
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="navbar-nav navbar-right fh-navbar-nav">
-                <li><a href=""><strong>HOME</strong></a></li>
-                <li><a href=""><strong>TAG</strong></a></li>
-                <li><a href=""><strong>ABOUT</strong></a></li>
+                <li class="fh-nav-btn"><a href=""><strong>HOME</strong></a></li>
+                <li class="fh-nav-btn"><a href="tag"><strong>TAG</strong></a></li>
+                <li class="fh-nav-btn"><a href="about"><strong>ABOUT</strong></a></li>
+                <li class="fh-nav-btn" class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu fh-dropdown-menu">
+                        <li class="fh-nav-dropdown-menu-btn"><a href="signin">Sign In</a></li>
+                        <li class="fh-nav-dropdown-menu-btn"><a href="signup">Sign Up</a></li>
+                    </ul>
+                </li>
             </ul>
          </div>
     </div>

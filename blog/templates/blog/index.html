@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block main-nav %}
+    {% include 'nav.html' %}
+{% endblock %}
+
 {% block jumbotron %}
      <div class="jumbotron fh-jumbotron">
          <div class="fh-jumbotron-img"></div>
@@ -8,32 +12,38 @@
 {% endblock %}
 
 {% block main %}
-    <div class="main-article">
-        <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-12 col-sm-12">
-                {% for article in object_list %}
-                    {% include "article.html" %}
-                {% endfor %}
-                <nav aria-label="...">
-                    <ul class="pager">
-                        {% if  page_obj.has_previous %}
-                            <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><span aria-hidden="true">&larr;</span> Previous</a></li>
-                        {% else %}
-                            <li class="previous disabled"><a class="disabled" href=""><span aria-hidden="true">&larr;</span> Previous</a></li>
-                        {% endif %}
+    <div class="container">
+        <div class="main-article">
+            <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-sm-12">
+                    {% for article in object_list %}
+                        {% include "article.html" %}
+                    {% endfor %}
+                    <nav aria-label="...">
+                        <ul class="pager">
+                            {% if  page_obj.has_previous %}
+                                <li class="previous"><a href="?page={{ page_obj.previous_page_number }}"><span aria-hidden="true">&larr;</span> Previous</a></li>
+                            {% else %}
+                                <li class="previous disabled"><a class="disabled" href=""><span aria-hidden="true">&larr;</span> Previous</a></li>
+                            {% endif %}
 
-                        {% if  page_obj.has_next %}
-                            <li class="next"><a href="?page={{ page_obj.next_page_number }}">Next <span aria-hidden="true">&rarr;</span></a></li>
-                        {% else %}
-                            <li class="next disabled"><a class="disabled" href="">Next <span aria-hidden="true">&rarr;</span></a></li>
-                        {% endif %}
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-lg-1 col-md-1 visible-sm visible-lg visible-md"></div>
-            <div class="col-lg-3 col-md-3 visible-sm visible-lg visible-md">
-                {% include "author.html" %}
+                            {% if  page_obj.has_next %}
+                                <li class="next"><a href="?page={{ page_obj.next_page_number }}">Next <span aria-hidden="true">&rarr;</span></a></li>
+                            {% else %}
+                                <li class="next disabled"><a class="disabled" href="">Next <span aria-hidden="true">&rarr;</span></a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-1 col-md-1 visible-sm visible-lg visible-md"></div>
+                <div class="col-lg-3 col-md-3 visible-sm visible-lg visible-md">
+                    {% include "author.html" %}
+                </div>
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block main-footer %}
+    {% include 'footer.html' %}
 {% endblock %}

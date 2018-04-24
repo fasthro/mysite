@@ -46,11 +46,14 @@ body{
     border-bottom-color: white;
 }
 
-.fh-navbar-nav li>a{
-    color: white;
-    font-size: 18px;
+.fh-nav-btn {
     line-height: 50px;
+}
+
+.fh-nav-btn a{
+    font-size: 18px;
     text-decoration: none;
+    color: white;
 }
 
 .fh-navbar-toggle{
@@ -60,6 +63,33 @@ body{
     border: 1px solid rgba(255,255,255,.1);
     border-radius: .25rem;
     color: rgba(255,255,255,.5);
+}
+
+.fh-dropdown-menu{
+    background-color: #343a40!important;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-radius: 0;
+}
+
+.fh-nav-dropdown-menu-btn{
+    line-height: 50px;
+    margin-left: 20px;
+}
+
+.fh-dropdown-menu li>a{
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    text-align: left;
+}
+
+.fh-dropdown-menu li>a:hover{
+    background-color: transparent;
+    color: white;
+}
+
+.fh-dropdown-menu li:hover{
+    border-bottom-color: white;
 }
 
 .fh-icon-bar{
@@ -246,6 +276,14 @@ body{
     color: yellow;
 }
 
+/** login */
+.fh-login-wrap{
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
 /***/
 @media (max-width: 768px) {
     /** 导航栏标志 */
@@ -261,4 +299,44 @@ body{
   .fh-article-tag-view{
       margin: 15px 0 0 0;
   }
+}
+
+.mb-1{
+    margin-bottom: 1rem!important;
+}
+
+.mb-2{
+    margin-bottom: 2rem!important;
+}
+
+.mb-3{
+    margin-bottom: 3rem!important;
+}
+
+.mb-4{
+    margin-bottom: 3rem!important;
+}
+
+.mb-5{
+    margin-bottom: 3rem!important;
+}
+
+.mt-1{
+    margin-top: 1rem!important;
+}
+
+.mt-2{
+    margin-top: 2rem!important;
+}
+
+.mt-3{
+    margin-top: 3rem!important;
+}
+
+.mt-4{
+    margin-top: 3rem!important;
+}
+
+.mt-5{
+    margin-top: 3rem!important;
 }
