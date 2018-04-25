@@ -1,0 +1,32 @@
+{% extends "blog/base/base.html" %}
+
+{% block main-nav %}
+    {% include 'blog/base/nav.html' %}
+{% endblock %}
+
+{% block jumbotron %}
+     <div class="jumbotron fh-jumbotron">
+         <div class="article-jumbotron-img"></div>
+         <div class="article-jumbotron-mask"></div>
+     </div>
+{% endblock %}
+
+{% block main %}
+    <div class="article-wrap">
+        <div class="container">
+            <div class="article-title-view">
+                <h1>{{ article.title }}</h1>
+                <h3>{{ article.subtitle }}</h3>
+            </div>
+            <div class="article-content">
+                {% autoescape off%}
+                    {{ article.content }}
+                {% endautoescape %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block main-footer %}
+    {% include 'blog/base/footer.html' %}
+{% endblock %}

@@ -6,7 +6,7 @@
            </div>
            <div class="fh-artucle-subtitle-arrow"></div>
        </div>
-       <a class="fh-article-title h2" href="">{{ article.title }}</a>
+       <a class="fh-article-title h2" href="/article/{{ article.id }}">{{ article.title }}</a>
     </div>
     <div class="row fh-article-tag-view">
        <div class="fh-article-data-view pull-left">
@@ -30,13 +30,13 @@
     <div class="row fh-article-abstract-view">
         <div class="fh-article-img col-lg-4 col-md-4 col-sm-4">
             <div class="thumbnail">
-                <a href="">
+                <a href="/article/{{ article.id }}">
                     <img src={{ article.img }}>
                 </a>
             </div>
         </div>
         <div class="fh-article-abstract col-lg-8 col-md-8 col-sm-8">
-            <a href="">
+            <a href="/article/{{ article.id }}">
                 <p>
                     {{ article.abstract }}
                 </p>

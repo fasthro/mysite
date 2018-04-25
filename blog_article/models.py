@@ -82,10 +82,15 @@ class Article(models.Model):
             tagls.append(ArticleTag.objects.get(tag_id=item))
         return sorted(tagls, key=lambda cmp:cmp.order)
 
-    def __str__(self):
-        return self.title
+    def increase_browse(self):
+        '''
+        阅读数量增加
+        :return:
+        '''
+        self.browse_num = self.browse_num + 1
+        self.save()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     class Meta:

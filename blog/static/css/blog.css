@@ -308,6 +308,21 @@ body{
     color: white;
 }
 
+/** article */
+.article-jumbotron-img{
+    background: url(../img/home_banner.jpg) center;
+    min-height: 350px;
+    height: 350px;
+}
+
+.article-jumbotron-mask{
+    margin-top: -350px;
+    width: 100%;
+    min-height: 350px;
+    height: 350px;
+    background: rgba(0, 0, 0, 0.5);
+}
+
 /** login */
 .fh-login-wrap{
     width: 100%;
