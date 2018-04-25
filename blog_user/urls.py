@@ -1,7 +1,8 @@
-from django.urls import path
-from django.views.generic import TemplateView
+from django.urls import path, re_path
+from blog_user.views import SigninView, SignupView
 
+app_name = 'blog_user'
 urlpatterns = [
-    path('signin/', TemplateView.as_view(template_name="../templates/blog/signin.html")),
-    path('signup/', TemplateView.as_view(template_name="../templates/blog/signup.html")),
+    re_path(r'^signin/$', SigninView.as_view(), name='signin'),
+    re_path(r'^signup/$', SignupView.as_view(), name='signup'),
 ]

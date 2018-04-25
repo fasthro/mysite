@@ -8,6 +8,12 @@ body{
     height: 100%;
 }
 
+.fh-main{
+    padding: 0;
+    padding-bottom: 80px;
+    min-height: 100%;
+}
+
 /** nav */
 .fh-navbar
 {
@@ -126,8 +132,7 @@ body{
     text-align: center;
     line-height: 80px;
     position: relative;
-    bottom: 0px;
-    margin-top: 100px;
+    bottom: 0;
 }
 
 .main-footer span{
@@ -274,6 +279,33 @@ body{
 
 .fh-authon-line ul>li>a{
     color: yellow;
+}
+
+/** tags view */
+.fh-tags-view{
+    margin: 30px 0px;
+    background-color: #fff;
+    padding-bottom: 10px;
+    -moz-box-shadow: 0 1px 4px #ccc;
+    -webkit-box-shadow: 0 1px 4px #ccc;
+    box-shadow: 0 1px 4px #ccc;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 20px 20px;
+}
+
+.fh-tags-view a{
+    margin: 5px;
+    font-size: 18px;
+    border-radius: 999em;
+    color: white;
+    font-weight: normal;
+    border:transparent;
+}
+
+.fh-tags-view a:hover{
+    color: white;
 }
 
 /** login */

@@ -8,14 +8,14 @@
                 <span class="icon-bar fh-icon-bar"></span>
             </button>
             <div class="fh-navbar-brand">
-                <a href="" class="fh-navbar-logo"><strong>FAST HRO</strong></a>
-                <img src="../static/img/blog-logo.png" alt="" class="fh-navbar-logo-icon" height="24px">
+                <a href="{% url 'blog:home' %}" class="fh-navbar-logo"><strong>FAST HRO</strong></a>
+                <img src="../../../static/img/blog-logo.png" alt="" class="fh-navbar-logo-icon" height="24px">
             </div>
         </div>
          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="navbar-nav navbar-right fh-navbar-nav">
-                <li class="fh-nav-btn"><a href=""><strong>HOME</strong></a></li>
-                <li class="fh-nav-btn"><a href="tag"><strong>TAG</strong></a></li>
+                <li class="fh-nav-btn"><a href="{% url 'blog:home' %}"><strong>HOME</strong></a></li>
+                <li class="fh-nav-btn"><a href="/tags/{{ nav_tag.tag_id }}"><strong>TAGS</strong></a></li>
                 <li class="fh-nav-btn"><a href="about"><strong>ABOUT</strong></a></li>
                 <li class="fh-nav-btn" class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -23,8 +23,8 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu fh-dropdown-menu">
-                        <li class="fh-nav-dropdown-menu-btn"><a href="signin">Sign In</a></li>
-                        <li class="fh-nav-dropdown-menu-btn"><a href="signup">Sign Up</a></li>
+                        <li class="fh-nav-dropdown-menu-btn"><a href="{% url 'user:signin' %}">Sign In</a></li>
+                        <li class="fh-nav-dropdown-menu-btn"><a href="{% url 'user:signup' %}">Sign Up</a></li>
                     </ul>
                 </li>
             </ul>

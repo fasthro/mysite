@@ -14,17 +14,20 @@
 {% block main %}
     <div class="fh-main-wrap">
         <div class="container">
+            <div class="col-lg-8 col-md-8 col-sm-12 col-sm-12 col-lg-offset-2 col-md-offset-2">
+                <div class="row fh-tags-view">
+                    {% for tag in tags %}
+                        <a href="/tags/{{ tag.tag_id }}" class="btn btn-default btn-md {{ tag.tag_label_style }}">{{ tag.name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
             <div class="main-article">
                 <div class="row">
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-sm-12">
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-sm-12 col-lg-offset-2 col-md-offset-2">
                         {% for article in object_list %}
                             {% include "blog/base/article.html" %}
                         {% endfor %}
                         {% include "blog/base/article_paging.html" %}
-                    </div>
-                    <div class="col-lg-1 col-md-1 visible-lg visible-md"></div>
-                    <div class="col-lg-3 col-md-3 visible-lg visible-md">
-                        {% include "blog/base/author.html" %}
                     </div>
                 </div>
             </div>
