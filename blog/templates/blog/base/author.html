@@ -1,11 +1,18 @@
 <div class="fh-author-view">
     <div class="fh-author-tag-view">
         <hr>
-        <a href="tag">FEATURED TAGS</a>
+        <a href="/types/{{ nav_type.type_id }}">FEATURED TYPES</a>
+        <div class="row fh-author-tag">
+            {% for type in types %}
+                <a href="/types/{{ type.type_id }}" class="btn btn-default btn-sm">{{ type.name }}</a>
+            {% endfor %}
+        </div>
 
+        <hr>
+        <a href="/tags/{{ nav_tag.tag_id }}">FEATURED TAGS</a>
         <div class="row fh-author-tag">
             {% for tag in tags %}
-                <a href="tags/{{ tag.tag_id }}" class="btn btn-default btn-sm">{{ tag.name }}</a>
+                <a href="/tags/{{ tag.tag_id }}" class="btn btn-default btn-sm">{{ tag.name }}</a>
             {% endfor %}
         </div>
         <hr>
