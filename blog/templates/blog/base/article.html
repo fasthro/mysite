@@ -21,7 +21,7 @@
            </span>
        </div>
        <div class="fh-article-tag pull-right visible-lg visible-md visible-sm">
-           {% for tag in article.get_tags %}
+           {% for tag in article.tags.all %}
                <span class="label {{ tag.tag_label_style }}">{{ tag.name }}</span>
            {% endfor %}
        </div>

@@ -61,7 +61,7 @@ class TagsView(BaseMixin, ListView):
 
     def get_queryset(self):
         tag = self.kwargs.get('tag_id', '')
-        return Article.objects.all().filter(tags__regex=tag)
+        return Article.objects.all().filter(tags__tag_id=tag)
 
     def get_context_data(self, **kwargs):
         context = super(TagsView, self).get_context_data(**kwargs)

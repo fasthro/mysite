@@ -1,9 +1,10 @@
 from django.views.generic.detail import DetailView
 from blog_article.models import Article, ArticleTag, ArticleType
+from blog.views import BaseMixin
 
 
 # article view
-class ArticleView(DetailView):
+class ArticleView(BaseMixin, DetailView):
     model = Article
     template_name = 'blog_article/article.html'
     context_object_name = 'article'
