@@ -282,16 +282,15 @@ body{
 
 /** tags view */
 .fh-tags-view{
-    margin: 30px 0px;
+    margin: 30px -15px;
     background-color: #fff;
-    padding-bottom: 10px;
     -moz-box-shadow: 0 1px 4px #ccc;
     -webkit-box-shadow: 0 1px 4px #ccc;
     box-shadow: 0 1px 4px #ccc;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    padding: 20px 20px;
+    padding: 20px 0px;
 }
 
 .fh-tags-view a{
@@ -309,17 +308,48 @@ body{
 
 /** article */
 .article-jumbotron-img{
-    background: url(../img/home_banner.jpg) center;
+    background: url(../img/article/article-jumbotron-default.jpg) center;
     min-height: 350px;
     height: 350px;
 }
 
-.article-jumbotron-mask{
-    margin-top: -350px;
-    width: 100%;
-    min-height: 350px;
-    height: 350px;
-    background: rgba(0, 0, 0, 0.5);
+.article-jumbotron-content{
+    position: relative;
+    top: 50%;
+    transform: translateY(-30%);
+    color: white;
+}
+
+.article-jumbotron-content h1{
+    font-weight: 700;
+}
+
+.btn-type-default{
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 8px 18px;
+}
+
+.btn-type-default:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    text-decoration: none;
+}
+
+.btn-tag-default{
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 8px 18px;
+}
+
+.btn-tag-default:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    color: white;
+    text-decoration: none;
 }
 
 /** login */

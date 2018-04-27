@@ -6,22 +6,31 @@
 
 {% block jumbotron %}
      <div class="jumbotron fh-jumbotron">
-         <div class="article-jumbotron-img"></div>
-         <div class="article-jumbotron-mask"></div>
+         <div class="article-jumbotron-img">
+              <div class="article-jumbotron-content text-center">
+                  <div class="container">
+                      <div class="col-lg-8 col-md-10 col-lg-offset-2 col-md-offset-1">
+                          <div>
+                              <a href="/types/{{ article.type.type_id }}" class="btn-sm btn-type-default">{{ article.type.name }}</a>
+                          </div>
+                          <h1>{{ article.title }}</h1>
+                          <h2>{{ article.subtitle }}</h2>
+                      </div>
+                  </div>
+             </div>
+         </div>
      </div>
 {% endblock %}
 
 {% block main %}
     <div class="article-wrap">
         <div class="container">
-            <div class="article-title-view">
-                <h1>{{ article.title }}</h1>
-                <h3>{{ article.subtitle }}</h3>
-            </div>
-            <div class="article-content">
-                {% autoescape off%}
-                    {{ article.content }}
-                {% endautoescape %}
+            <div class="col-lg-8 col-md-10 col-lg-offset-2 col-md-offset-1">
+                <div class="article-content">
+                    {% autoescape off%}
+                        {{ article.content }}
+                    {% endautoescape %}
+                </div>
             </div>
         </div>
     </div>
