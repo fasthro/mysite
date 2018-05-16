@@ -1,5 +1,9 @@
 {% extends "blog/base/base.html" %}
 
+{% block head-js %}
+    <script src="{{ STATIC_URL }}showdown/showdown.min.js"></script>
+{% endblock %}
+
 {% block main-nav %}
     {% include 'blog/base/nav.html' %}
 {% endblock %}
