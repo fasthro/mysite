@@ -23,5 +23,4 @@ urlpatterns = [
     re_path(r'', include('blog.urls', namespace='blog')),
     re_path(r'article/', include('blog_article.urls', namespace='article')),
     re_path(r'user/', include('blog_user.urls', namespace='user')),
-    re_path(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 ]
