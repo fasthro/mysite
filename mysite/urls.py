@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 from django.urls import include
+from mysite import settings;
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'', include('blog.urls', namespace='blog')),
     re_path(r'article/', include('blog_article.urls', namespace='article')),
     re_path(r'user/', include('blog_user.urls', namespace='user')),
+    re_path(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 ]
