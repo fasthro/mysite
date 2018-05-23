@@ -1,7 +1,27 @@
 {% extends "blog/base/base.html" %}
+{% load static %}
+{% block css %}
+    <!-- 如果是md,引入editor.md插件 -->
+    {% if article.get_is_md %}
+        <link href="{% static "editor.md/css/editormd.preview.min.css" %}" rel="stylesheet">
+    {% endif %}
+{% endblock %}
 
 {% block head-js %}
-    <script src="{{ STATIC_URL }}showdown/showdown.min.js"></script>
+    <!-- 如果是md,引入editor.md插件 -->
+    {% if article.get_is_md %}
+        <script src="{% static "editor.md/examples/js/jquery.min.js" %}"></script>
+        <script src="{% static "editor.md/lib/marked.min.js" %}"></script>
+        <script src="{% static "editor.md/lib/prettify.min.js" %}"></script>
+
+        <script src="{% static "editor.md/lib/raphael.min.js" %}"></script>
+        <script src="{% static "editor.md/lib/underscore.min.js" %}"></script>
+        <script src="{% static "editor.md/lib/sequence-diagram.min.js" %}"></script>
+        <script src="{% static "editor.md/lib/flowchart.min.js" %}"></script>
+        <script src="{% static "editor.md/lib/jquery.flowchart.min.js" %}"></script>
+
+        <script src="{% static "editor.md/editormd.min.js" %}"></script>
+    {% endif %}
 {% endblock %}
 
 {% block main-nav %}
@@ -31,9 +51,17 @@
         <div class="container">
             <div class="col-lg-8 col-md-10 col-lg-offset-2 col-md-offset-1">
                 <div class="article-content">
-                    {% autoescape off%}
-                        {{ article.content }}
-                    {% endautoescape %}
+                    {% if article.get_is_md %}
+                        <div id="md-content">
+                            <textarea style="display:none;">
+                                {{ article.get_content }}
+                            </textarea>
+                        </div>
+                    {% else %}
+                        {% autoescape off%}
+                            {{ article.get_content }}
+                        {% endautoescape %}
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -43,3 +71,20 @@
 {% block main-footer %}
     {% include 'blog/base/footer.html' %}
 {% endblock %}
+
+{% if article.get_is_md %}
+    {% block js %}
+        <script type="text/javascript">
+            $(function() {
+                var editormdView = editormd.markdownToHTML("md-content", {
+                    htmlDecode      : "style,script,iframe",
+                    emoji           : true,
+                    taskList        : true,
+                    tex             : true,  // 默认不解析
+                    flowChart       : true,  // 默认不解析
+                    sequenceDiagram : true,  // 默认不解析
+                });
+            });
+        </script>
+    {% endblock %}
+{% endif %}
