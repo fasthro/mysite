@@ -6,7 +6,7 @@
 - 支持 makedown ，基于 [Editor.md](https://pandao.github.io/editor.md/index.html "Editor.md") 实现 makedown
 
 
-#####ACT 博客内容类型
+##### ACT 博客内容类型
 ```python
 ACT_HTML = 1      # html 内容
 ACT_MD_TEXT = 2   # makedown 内容
