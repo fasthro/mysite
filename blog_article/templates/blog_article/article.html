@@ -38,7 +38,11 @@
                               <a href="/types/{{ article.type.type_id }}" class="btn-sm btn-type-default">{{ article.type.name }}</a>
                           </div>
                           <h1>{{ article.title }}</h1>
-                          <h2>{{ article.subtitle }}</h2>
+                          <h2>
+                              {% if article.subtitle %}
+                                {{ article.subtitle }}
+                              {% endif %}
+                          </h2>
                       </div>
                   </div>
              </div>

@@ -4,6 +4,8 @@ from blog_article import models
 # list_display =[] 设置显示在列表中的字段
 # ordering = [] 在列表中的排序规则
 # list_editable = [] 设置可编辑的字段
+# search_fields = () 搜索字段
+
 
 @admin.register(models.ArticleTag)
 class ArticleTagAdmin(admin.ModelAdmin):
@@ -22,4 +24,5 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = ['title', 'type', 'create_time']
     ordering = ['-create_time']
     list_editable = ['type']
+    # search_fields = ('type', 'title', 'tags')
     filter_horizontal = ('tags',)
