@@ -127,11 +127,13 @@ USE_TZ = True
 # static
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'blog/static'),
-    os.path.join(BASE_DIR, 'blog_user/static'),
-    os.path.join(BASE_DIR, 'blog_article/static'),
-)
+
+if DEBUG:
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'blog/static'),
+        os.path.join(BASE_DIR, 'blog_user/static'),
+        os.path.join(BASE_DIR, 'blog_article/static'),
+    )
 
 #设置user model
 AUTH_USER_MODEL = 'blog_user.BUser'
