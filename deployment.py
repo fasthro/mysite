@@ -5,6 +5,7 @@ import shutil
 from git import Repo
 from django.core import management
 import codecs
+import platform
 
 cwd = os.getcwd()
 
@@ -87,23 +88,24 @@ if os.path.exists(article_root):
     for md in mdps:
         replace_md_img_url(md)
 
+if platform.system() == "Linux":
+    # 重启 uwsgi 服务
+    pid_url = os.path.join(cwd, 'uwsgi.pid')
+    if os.path.exists(pid_url):
+        print('kill uwsgi')
+        pcode = codecs.open(pid_url, 'r', 'utf-8')
+        pid = pcode.readline().strip('\n')
+        pcode.close()
 
-# 重启 uwsgi 服务
-pid_url = os.path.join(cwd, 'uwsgi.pid')
-if os.path.exists(pid_url):
-    print('kill uwsgi')
-    pcode = codecs.open(pid_url, 'r', 'utf-8')
-    pid = pcode.readline().strip('\n')
-    pcode.close()
+        os.system('kill -9 ' + pid)
 
-    os.system('kill -9 ' + pid)
-
-print('restart uwsgi')
-os.system('uwsgi --ini uwsgi.ini')
+    print('restart uwsgi')
+    os.system('uwsgi --ini uwsgi.ini')
 
 
-# 重启 nginx
-print('restart nginx')
-os.system('/etc/init.d/nginx restart')
+    # 重启 nginx
+    print('restart nginx')
+    os.system('/etc/init.d/nginx restart')
 
+print("platform : " + platform.system())
 print('********** 服务器部署完毕 ********')
