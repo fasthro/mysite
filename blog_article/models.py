@@ -81,17 +81,15 @@ class Article(models.Model):
             return self.content
         else:
             fp = self.content_file.path
-
-            index = fp.find("mysite/static/")
+            index = fp.find("static")
             if index != -1:
-                fp = os.path.join(settings.STATIC_ROOT, fp[index:-1])
-
+                sindex = index + len("static")
+                fp = settings.STATIC_ROOT + fp[sindex:]
             if os.path.exists(fp):
                 cont = codecs.open(fp, 'r', 'utf-8')
                 text = ''
                 for item in cont.readlines():
                     text = text + item
-
                 return text
             else:
                 return "content : none! " + fp;
