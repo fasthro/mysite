@@ -81,6 +81,11 @@ class Article(models.Model):
             return self.content
         else:
             fp = self.content_file.path
+
+            index = fp.find("mysite/static/")
+            if index != -1:
+                fp = os.path.join(settings.STATIC_ROOT, fp[index:-1])
+
             if os.path.exists(fp):
                 cont = codecs.open(fp, 'r', 'utf-8')
                 text = ''
@@ -89,7 +94,7 @@ class Article(models.Model):
 
                 return text
             else:
-                return ""
+                return "content : none! " + fp;
 
     # 获取是否为 makedown 文档
     def get_is_md(self):
