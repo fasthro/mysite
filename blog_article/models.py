@@ -88,8 +88,8 @@ class Article(models.Model):
             if os.path.exists(fp):
                 cont = codecs.open(fp, 'r', 'utf-8')
                 text = ''
-                for item in cont.readlines():
-                    text = text + item
+                for line in cont.readlines():
+                    text = text + line
                 return text
             else:
                 return "content : none! " + fp;
