@@ -2,6 +2,7 @@ from datetime import datetime
 from django.db import models
 from django.conf import settings
 from blog import conf
+from blog import const
 import os
 import codecs
 
@@ -28,6 +29,10 @@ class ArticleTag(models.Model):
         ("label-danger", "label-danger"),
     )
     tag_label_style = models.CharField(max_length=200, choices=LABEL_STYLE, default='label-success', verbose_name='标签样式')
+
+    # 获取是否为空 tag
+    def get_is_none(self):
+        return self.tag_id == const.TAG_NONE_ID
 
     def __str__(self):
         return self.name

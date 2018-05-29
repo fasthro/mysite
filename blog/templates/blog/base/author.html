@@ -12,7 +12,10 @@
         <a href="/tags/{{ nav_tag.tag_id }}">FEATURED TAGS</a>
         <div class="row fh-author-tag">
             {% for tag in tags %}
-                <a href="/tags/{{ tag.tag_id }}" class="btn btn-default btn-sm">{{ tag.name }}</a>
+                {% if tag.get_is_none %}
+                {% else %}
+                    <a href="/tags/{{ tag.tag_id }}" class="btn btn-default btn-sm">{{ tag.name }}</a>
+                {% endif %}
             {% endfor %}
         </div>
         <hr>

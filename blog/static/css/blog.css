@@ -360,6 +360,64 @@ body{
     margin: 0 auto;
 }
 
+/** mz */
+.mz-item-wrap {
+    max-width: 530px;
+    width: 100%;
+    margin: 0 auto 0;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: initial;
+    transition: background-color 200ms ease-in;
+    z-index: initial;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
+    background-color: #fff;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    text-align: start;
+}
+
+.mz-kong{
+    height: 24px;
+}
+
+.mz-item-icon {
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.mz-item-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    max-height: 6em;
+    line-height: 1.5em;
+    color: rgba(0,0,0,0.87);
+    font-size: 14px;
+    margin: 16px 16px 0;
+}
+
+.mz-item-content-kong {
+    height: 15px;
+}
+
+.mz-item-time {
+    text-align: right;
+}
+
+.mz-item-time p{
+    margin: 10px;
+}
 /***/
 @media (max-width: 768px) {
     /** 导航栏标志 */

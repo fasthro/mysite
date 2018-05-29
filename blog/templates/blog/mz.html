@@ -1,0 +1,42 @@
+{% extends "blog/base/base.html" %}
+{% load static %}
+{% block main-nav %}
+    {% include 'blog/base/nav.html' %}
+{% endblock %}
+
+{% block jumbotron %}
+     <div class="jumbotron fh-jumbotron">
+         <div class="fh-jumbotron-img"></div>
+         <div class="fh-jumbotron-mask"></div>
+     </div>
+{% endblock %}
+
+{% block main %}
+    <div class="fh-main-wrap mz-view-wrap">
+        <div class="container">
+            <div class="main-article">
+                <div class="row">;
+                    <div class="visible-lg visible-md">
+                        {% for article in object_list %}
+                            {% include "blog/base/mz-article.html" %}
+                        {% endfor %}
+                    </div>
+                    <div class="visible-sm">
+                       {% for article in object_list %}
+                            {% include "blog/base/mz-article.html" %}
+                        {% endfor %}
+                    </div>
+                    <div class="visible-xs">
+                        {% for article in object_list %}
+                            {% include "blog/base/mz-article.html" %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block main-footer %}
+    {% include 'blog/base/footer.html' %}
+{% endblock %}

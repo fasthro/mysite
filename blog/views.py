@@ -1,8 +1,10 @@
 from django.views.generic.list import ListView
 from django.views.generic import DetailView
-from  blog_user.models import BUser
+from blog_user.models import BUser
 from blog_article.models import Article, ArticleTag, ArticleType
 from blog import conf
+from blog import const
+from django.db.models import Q
 
 
 # base mixin
@@ -13,14 +15,20 @@ class BaseMixin(object):
         # 全局所有 tag 类型
         context['tags'] = tags
         # 导航 tags 对应的默认 tag 类型
-        context['nav_tag'] = tags[0]
+        if len(tags) > 0:
+            context['nav_tag'] = tags.filter(tag_id=const.TAG_NAV_ID)[0]
+        else:
+            context['nav_tag'] = None
 
         # 全局所有 type 类型
         types = ArticleType.objects.order_by('order')
         # 全局所有 tag 类型
         context['types'] = types
         # 导航 types 对应的默认 type 类型
-        context['nav_type'] = types[0]
+        if len(types) > 0:
+            context['nav_type'] = types.filter(type_id=const.TYPE_NAV_ID)[0]
+        else:
+            context['nav_type'] = None
 
         # 当前作者信息
         context['author'] = BUser.objects.get(is_author=True)
@@ -32,6 +40,10 @@ class MainView(BaseMixin, ListView):
     model = Article
     template_name = "blog/index.html"
     paginate_by = conf.MAIN_PAGE_NUM
+
+    def get_queryset(self):
+        at = ArticleType.objects.get(type_id=const.TYPE_MZ_ID)
+        return Article.objects.all().filter(~Q(type_id=at.id))
 
 
 # types view
@@ -68,4 +80,15 @@ class TagsView(BaseMixin, ListView):
         # 当前选择的标签
         context['select_tag'] = self.kwargs.get('tag_id', '')
         return context
+
+
+# mz view
+class MzView(BaseMixin, ListView):
+    model = Article
+    template_name = "blog/mz.html"
+    paginate_by = conf.MAIN_PAGE_NUM
+
+    def get_queryset(self):
+        at = ArticleType.objects.get(type_id=const.TYPE_MZ_ID)
+        return Article.objects.all().filter(type_id=at.id)
 

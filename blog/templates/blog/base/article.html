@@ -22,7 +22,10 @@
        </div>
        <div class="fh-article-tag pull-right visible-lg visible-md visible-sm">
            {% for tag in article.tags.all %}
-               <span class="label {{ tag.tag_label_style }}">{{ tag.name }}</span>
+               {% if tag.get_is_none %}
+               {% else %}
+                   <span class="label {{ tag.tag_label_style }}">{{ tag.name }}</span>
+               {% endif %}
            {% endfor %}
        </div>
    </div>
