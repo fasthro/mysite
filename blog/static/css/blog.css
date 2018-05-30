@@ -400,7 +400,6 @@ body{
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     display: -webkit-box;
-    max-height: 6em;
     line-height: 1.5em;
     color: rgba(0,0,0,0.87);
     font-size: 14px;
@@ -413,15 +412,13 @@ body{
 
 .mz-item-time {
     text-align: right;
-}
-
-.mz-item-time p{
     margin: 10px;
 }
 
 .mz-item-view a{
     text-decoration: none;
 }
+
 /***/
 @media (max-width: 768px) {
     /** 导航栏标志 */
