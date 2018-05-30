@@ -1,22 +1,24 @@
 {% load static %}
 
-<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+<div class="mz-item-view">
     <div class="mz-kong"></div>
-    <div class="mz-item-wrap">
-        <div class="mz-item-icon-wrap">
-            <img class="mz-item-icon" src="{{ article.img }}">
-        </div>
-        <div class="mz-item-content">
-            <div class="mz-item-title">
-                <b>{{ article.title }}</b>
+    <a href="/article/{{ article.id }}">
+        <div class="mz-item-wrap">
+            <div class="mz-item-icon-wrap">
+                <img class="mz-item-icon" src="{{ article.img }}">
             </div>
-            <div class="mz-item-content-kong"></div>
-            <div class="mz-item-subtitle">
-                <p>{{ article.subtitle }}</p>
+            <div class="mz-item-content">
+                <div class="mz-item-title">
+                    <b>{{ article.title }}</b>
+                </div>
+                <div class="mz-item-content-kong"></div>
+                <div class="mz-item-subtitle">
+                    <p>{{ article.abstract }}</p>
+                </div>
+            </div>
+            <div class="mz-item-time">
+                <p>{{ article.create_time | date:"Y-m-d" }}</p>
             </div>
         </div>
-        <div class="mz-item-time">
-            <p>{{ article.create_time | date:"Y-m-d" }}</p>
-        </div>
-    </div>
+    </a>
 </div>

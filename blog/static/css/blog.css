@@ -418,6 +418,10 @@ body{
 .mz-item-time p{
     margin: 10px;
 }
+
+.mz-item-view a{
+    text-decoration: none;
+}
 /***/
 @media (max-width: 768px) {
     /** 导航栏标志 */

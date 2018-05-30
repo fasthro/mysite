@@ -86,9 +86,80 @@ class TagsView(BaseMixin, ListView):
 class MzView(BaseMixin, ListView):
     model = Article
     template_name = "blog/mz.html"
-    paginate_by = conf.MAIN_PAGE_NUM
 
     def get_queryset(self):
         at = ArticleType.objects.get(type_id=const.TYPE_MZ_ID)
-        return Article.objects.all().filter(type_id=at.id)
+        return Article.objects.all().filter(type_id=at.id).order_by('-create_time')
+
+    def get_context_data(self, **kwargs):
+        context = super(MzView, self).get_context_data(**kwargs)
+        self.get_group_list(context)
+        return context
+
+    # 获取分组
+    def get_group_list(self, context):
+
+        index = 0
+        round2 = 0
+        round3 = 0
+        round4 = 0
+
+        temps2_1 = []
+        temps2_2 = []
+
+        temps3_1 = []
+        temps3_2 = []
+        temps3_3 = []
+
+        temps4_1 = []
+        temps4_2 = []
+        temps4_3 = []
+        temps4_4 = []
+        for item in self.object_list:
+            index += 1
+
+            # 2
+            if index % 2 == 0:
+                round2 += 1
+
+            if index - round2 * 2 == 1:
+                temps2_1.append(item)
+            elif index - round2 * 2 == 0:
+                temps2_2.append(item)
+
+            # 3
+            if index % 3 == 0:
+                round3 += 1
+
+            if index - round3 * 3 == 1:
+                temps3_1.append(item)
+            elif index - round3 * 3 == 2:
+                temps3_2.append(item)
+            elif index - round3 * 3 == 0:
+                temps3_3.append(item)
+
+            # 4
+            if index % 4 == 0:
+                round4 += 1
+
+            if index - round4 * 4 == 1:
+                temps4_1.append(item)
+            elif index - round4 * 4 == 2:
+                temps4_2.append(item)
+            elif index - round4 * 4 == 3:
+                temps4_3.append(item)
+            elif index - round4 * 4 == 0:
+                temps4_4.append(item)
+
+        context['group_2_1'] = temps2_1
+        context['group_2_2'] = temps2_2
+
+        context['group_3_1'] = temps3_1
+        context['group_3_2'] = temps3_2
+        context['group_3_3'] = temps3_3
+
+        context['group_4_1'] = temps4_1
+        context['group_4_2'] = temps4_2
+        context['group_4_3'] = temps4_3
+        context['group_4_4'] = temps4_4
 

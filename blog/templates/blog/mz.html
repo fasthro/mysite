@@ -16,20 +16,63 @@
         <div class="container">
             <div class="main-article">
                 <div class="row">;
-                    <div class="visible-lg visible-md">
-                        {% for article in object_list %}
-                            {% include "blog/base/mz-article.html" %}
-                        {% endfor %}
+                    <div class="visible-lg">
+                        <div class="col-lg-3">
+                            {% for article in group_4_1 %}
+                                {% include "blog/base/mz-article.html" %}
+                            {% endfor %}
+                        </div>
+                        <div class="col-lg-3">
+                            {% for article in group_4_2 %}
+                                {% include "blog/base/mz-article.html" %}
+                            {% endfor %}
+                        </div>
+                        <div class="col-lg-3">
+                            {% for article in group_4_3 %}
+                                {% include "blog/base/mz-article.html" %}
+                            {% endfor %}
+                        </div>
+                        <div class="col-lg-3">
+                            {% for article in group_4_4 %}
+                                {% include "blog/base/mz-article.html" %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="visible-md">
+                        <div class="col-md-4">
+                            {% for article in group_3_1 %}
+                                {% include "blog/base/mz-article.html" %}
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-4">
+                            {% for article in group_3_2 %}
+                                {% include "blog/base/mz-article.html" %}
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-4">
+                            {% for article in group_3_3 %}
+                                {% include "blog/base/mz-article.html" %}
+                            {% endfor %}
+                        </div>
                     </div>
                     <div class="visible-sm">
-                       {% for article in object_list %}
-                            {% include "blog/base/mz-article.html" %}
-                        {% endfor %}
+                      <div class="col-sm-6">
+                            {% for article in group_2_1 %}
+                                {% include "blog/base/mz-article.html" %}
+                            {% endfor %}
+                        </div>
+                        <div class="col-sm-6">
+                            {% for article in group_2_2 %}
+                                {% include "blog/base/mz-article.html" %}
+                            {% endfor %}
+                        </div>
                     </div>
                     <div class="visible-xs">
-                        {% for article in object_list %}
-                            {% include "blog/base/mz-article.html" %}
-                        {% endfor %}
+                        <div class="col-xs-12">
+                            {% for article in object_list %}
+                                {% include "blog/base/mz-article.html" %}
+                            {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
