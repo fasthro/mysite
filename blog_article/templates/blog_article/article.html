@@ -5,6 +5,7 @@
     {% if article.get_is_md %}
         <link href="{% static "editor.md/css/editormd.preview.min.css" %}" rel="stylesheet">
     {% endif %}
+    <link href="{% static "baguetteBox/baguetteBox.min.css" %}" rel="stylesheet">
 {% endblock %}
 
 {% block head-js %}
@@ -22,6 +23,8 @@
 
         <script src="{% static "editor.md/editormd.min.js" %}"></script>
     {% endif %}
+
+    <script src="{% static "baguetteBox/baguetteBox.min.js" %}"></script>
 {% endblock %}
 
 {% block main-nav %}
@@ -88,7 +91,15 @@
                     flowChart       : true,  // 默认不解析
                     sequenceDiagram : true,  // 默认不解析
                 });
+
+                baguetteBox.run('.pop-img-box', {
+                    fadeIn: true,
+                    fadeOut: true,
+                    noScrollbars: true
+                });
             });
+
+
         </script>
     {% endblock %}
 {% endif %}
