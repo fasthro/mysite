@@ -15,11 +15,11 @@ dev_server = 'localhost:8000'
 live_server = '39.106.221.18'
 
 print('********** 服务器部署开始 ********')
-print('git pull')
+# print('git pull')
 # git pull
-repo = Repo(cwd)
-remote = repo.remote()
-remote.pull()
+# repo = Repo(cwd)
+# remote = repo.remote()
+# remote.pull()
 
 
 print('manage.py collectstatic')

@@ -16,23 +16,23 @@ Linux 服务器是阿里云的，系统为 Ubuntu 16.04 64位
 
 `bash Anaconda3-5.1.0-Linux-x86_64.sh`
 
-![](http://localhost:8000/static/article/django/img/deployment_server-1.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-1.png)
 
 回车很多次继续
 
-![](http://localhost:8000/static/article/django/img/deployment_server-2.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-2.png)
 
 输入 yes 回车继续
 
-![](http://localhost:8000/static/article/django/img/deployment_server-3.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-3.png)
 
 回车开始进行安装，在此只需要耐心等待
 
-![](http://localhost:8000/static/article/django/img/deployment_server-4.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-4.png)
 
 是否添加到环境变量的询问，输入 yes 回车
 
-![](http://localhost:8000/static/article/django/img/deployment_server-5.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-5.png)
 
 安装 vscode 的询问，我这里就不安装了,输入 no 回车，安装完成。
 
@@ -40,7 +40,7 @@ Linux 服务器是阿里云的，系统为 Ubuntu 16.04 64位
 
 执行 `conda -V`命令查看 conda 版本号
 
-![](http://localhost:8000/static/article/django/img/deployment_server-6.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-6.png)
 
 发现没有 conda 这个命令，原因是没有把anaconda3 加入到系统环境变量中导致的问题。
 
@@ -50,7 +50,7 @@ Linux 服务器是阿里云的，系统为 Ubuntu 16.04 64位
 
 修改后如图:
 
-![](http://localhost:8000/static/article/django/img/deployment_server-7.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-7.png)
 
 修改完后保存退出 vi,执行 `source /etc/profile` 使修改马上生效，在执行 `conda -V` 命令就显示了 conda 当前版本
 
@@ -64,7 +64,7 @@ Linux 服务器是阿里云的，系统为 Ubuntu 16.04 64位
 
 执行 `conda env list` 命令查看所有环境
 
-![](http://localhost:8000/static/article/django/img/deployment_server-8.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-8.png)
 
 执行 ` conda install -n blog django` 来为 *blog* 环境安装 *django*
 
@@ -86,7 +86,7 @@ Linux 服务器是阿里云的，系统为 Ubuntu 16.04 64位
 
 执行 `nginx -v`
 
-![](http://localhost:8000/static/article/django/img/deployment_server-9.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-9.png)
 
 **nginx 命令**
 
@@ -100,7 +100,7 @@ Linux 服务器是阿里云的，系统为 Ubuntu 16.04 64位
 
 执行 `ps -ef|grep -i nginx`
 
-![](http://localhost:8000/static/article/django/img/deployment_server-10.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-10.png)
 
 **卸载 nginx**
 
@@ -116,23 +116,23 @@ Linux 服务器是阿里云的，系统为 Ubuntu 16.04 64位
 
 额...无法访问到。。。。
 
-![](http://localhost:8000/static/article/django/img/deployment_server-11.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-11.png)
 
 由于阿里云里面有个安全组的规则设置，这个会影响到端口是否外部可以访问到，修改一下阿里云的安全组，添加一条对 80 端口的规则设置
 
 **进入到安全组**
 
-![](http://localhost:8000/static/article/django/img/deployment_server-12.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-12.png)
 
-![](http://localhost:8000/static/article/django/img/deployment_server-13.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-13.png)
 
 **添加安全组规则**
 
-![](http://localhost:8000/static/article/django/img/deployment_server-14.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-14.png)
 
 设置完毕，再次在浏览器访问 nginx 服务器，页面中显示如下内容，表示已经成功访问到了nginx 服务器。
 
-![](http://localhost:8000/static/article/django/img/deployment_server-15.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-15.png)
 
 至此 nginx 服务器安装并且成功访问到了。
 
@@ -148,7 +148,7 @@ Linux 服务器是阿里云的，系统为 Ubuntu 16.04 64位
 
 果然没有顺利的安装成功，遇到了如下报错
 
-![](http://localhost:8000/static/article/django/img/deployment_server-16.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-16.png)
 
 由于编译的时候gcc 版本导致的问题
 
@@ -163,7 +163,7 @@ Linux 服务器是阿里云的，系统为 Ubuntu 16.04 64位
 
 再次执行 `pip install uwsgi` 安装 uwsgi，结果成功安装了
 
-![](http://localhost:8000/static/article/django/img/deployment_server-17.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-17.png)
 
 ####mysql
 
@@ -173,15 +173,15 @@ Linux 服务器是阿里云的，系统为 Ubuntu 16.04 64位
 
 执行 `sudo apt-get install mysql-server` 安装 mysql 服务
 
-![](http://localhost:8000/static/article/django/img/deployment_server-18.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-18.png)
 
 输入**Y** 继续
 
-![](http://localhost:8000/static/article/django/img/deployment_server-19.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-19.png)
 
 输入登录 mysql root 用户的密码，测试期间我的数据库密码为了方便记录，输入的为 "root"
 
-![](http://localhost:8000/static/article/django/img/deployment_server-20.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-20.png)
 
 再次输入密码就完成了 mysql 服务的安装
 
@@ -191,7 +191,7 @@ Linux 服务器是阿里云的，系统为 Ubuntu 16.04 64位
 
 执行 `sudo apt install libmysqlclient-dev`
 
-![](http://localhost:8000/static/article/django/img/deployment_server-21.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-21.png)
 
 输入**Y**
 
@@ -199,7 +199,7 @@ Linux 服务器是阿里云的，系统为 Ubuntu 16.04 64位
 
 执行 `sudo netstat -tap | grep mysql`
 
-![](http://localhost:8000/static/article/django/img/deployment_server-22.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-22.png)
 
 mysql 安装完成
 
@@ -221,23 +221,23 @@ mysql 安装完成
 
 执行 `netstat -nat | grep :3306` 发现依然是只有本地可以访问 3306 端口
 
-![](http://localhost:8000/static/article/django/img/deployment_server-23.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-23.png)
 
 执行 `vim /etc/mysql/mysql.conf.d/mysqld.cnf` 打开 mysql 配置文件
 
 注释掉 `bind-address = 127.0.0.1` 这行，保存退出，修改后内容如下
 
-![](http://localhost:8000/static/article/django/img/deployment_server-24.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-24.png)
 
 执行 `/etc/inint.d/mysqld start` 重启 mysql
 
 再次执行 `netstat -nat | grep :3306` 查看端口情况
 
-![](http://localhost:8000/static/article/django/img/deployment_server-25.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-25.png)
 
 发现不只是本地访问了，不要认为到这里就已经可以远程访问了，还需要在设置一下阿里云的安全组规则，使 3306 端口开放出来可访问
 
-![](http://localhost:8000/static/article/django/img/deployment_server-26.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-26.png)
 
 设置完毕之后，用闯将的新用户 fasthro 就可以远程连接到 mysql 了。
 
@@ -247,7 +247,7 @@ mysql 安装完成
 
 **项目目录结构**
 
-![](http://localhost:8000/static/article/django/img/deployment_server-27.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-27.png)
 
     uwsgi.ini //文件为项目 uwsgi 的配置
     nginx.conf //文件为项目 nginx 的配置
@@ -351,7 +351,7 @@ mysql 安装完成
 **创建数据库**
 这里大家要注意的是，如果执行 sql 语句 `CREATE DATABASE blog;` 创建数据，在启动django项目的时候会报如下错误
 
-![](http://localhost:8000/static/article/django/img/deployment_server-28.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-28.png)
 
 这是由于编码的问题导致
 
@@ -367,13 +367,13 @@ mysql 安装完成
 
 fuck！！！又报错，步步有坑！！！
 
-![](http://localhost:8000/static/article/django/img/deployment_server-29.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-29.png)
 
 解决办法
 
 执行 `find / -name libpcre.so.1` 查找 libpcre.so.1 所在的路径
 
-![](http://localhost:8000/static/article/django/img/deployment_server-30.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-30.png)
 
 那么就把 `export LD_LIBRARY_PATH=/root/anaconda3/lib:$LD_LIBRARY_PATH` 添加到系统
 
@@ -402,7 +402,7 @@ fuck！！！又报错，步步有坑！！！
 
 在执行 `vi ../etc/nginx/nginx.conf` 打开 nginx 默认的配置，修改用户为** root**
 
-![](http://localhost:8000/static/article/django/img/deployment_server-31.png)
+![](http://localhost:8000/static/article/django/img/deployment_server/deployment_server-31.png)
 
 保存并退出。
 

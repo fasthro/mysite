@@ -16,7 +16,7 @@
     pymysql.install_as_MySQLdb()
 
 #### 第二坑
-![](http://localhost:8000/static/article/django/img/trouble-2.png)
+![](http://localhost:8000/static/article/django/img/trouble/trouble-2.png)
 
 **填坑方法**
 
@@ -29,20 +29,20 @@ author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='作者', on_d
 ```
 
 #### 第三坑
-![](http://localhost:8000/static/article/django/img/trouble-3.png)
+![](http://localhost:8000/static/article/django/img/trouble/trouble-3.png)
 
 **填坑方法**
 需要执行 python manage.py makemigrations 创建数据迁移
 
 #### 第四坑
-![](http://localhost:8000/static/article/django/img/trouble-4.png)
+![](http://localhost:8000/static/article/django/img/trouble/trouble-4.png)
 
 **填坑方法**
 删除原有数据库之后再重新建立数据库，然后在执行 python manage.py migrate
 
 #### 第五坑
 在使用 django 静态文件方法的时候出的问题
-![](http://localhost:8000/static/article/django/img/trouble-5.png)
+![](http://localhost:8000/static/article/django/img/trouble/trouble-5.png)
 
 **填坑方法**
 在使用 "{% static "" %}" 方式访问静态资源的时候要加上 {% load static %} 
@@ -55,8 +55,8 @@ author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='作者', on_d
 
 #### 第七坑
 集成了 editor.md 来转化 makedown 到 html 时候,第一行总是转换失败，如图
-![](http://localhost:8000/static/article/django/img/trouble-7-1.png)
+![](http://localhost:8000/static/article/django/img/trouble/trouble-7-1.png)
 
 **填坑方法**
 把 makedown 第一行空出来或者加入注释
-![](http://localhost:8000/static/article/django/img/trouble-7-2.png)
+![](http://localhost:8000/static/article/django/img/trouble/trouble-7-2.png)
