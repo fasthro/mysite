@@ -1,4 +1,4 @@
-### django 搭建博客系统django 搭建博客系统
+### django 搭建博客系统
 
 - 前端基于 bootstrap3 框架实现
 - django 版本 2.0.2
