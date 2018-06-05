@@ -18,23 +18,23 @@
 
 >跑步5km
 
-![](http://localhost:8000/static/article/mz/img/ready_pregenancy/rp-6.png)
+![](http://localhost:8000/static/article/mz/img/ready_pregenancy/img-6.png)
 
 >压腿
 
-![](http://localhost:8000/static/article/mz/img/ready_pregenancy/rp-5.jpg)
+![](http://localhost:8000/static/article/mz/img/ready_pregenancy/img-5.jpg)
 
-![](http://localhost:8000/static/article/mz/img/ready_pregenancy/rp-3.jpg)
+![](http://localhost:8000/static/article/mz/img/ready_pregenancy/img-3.jpg)
 
-![](http://localhost:8000/static/article/mz/img/ready_pregenancy/rp-4.jpg)
+![](http://localhost:8000/static/article/mz/img/ready_pregenancy/img-4.jpg)
 
 >自己在家运动
 
-![](http://localhost:8000/static/article/mz/img/ready_pregenancy/rp-1.jpg)
+![](http://localhost:8000/static/article/mz/img/ready_pregenancy/img-1.jpg)
 
 >下班自己去公园跑步压腿
 
-![](http://localhost:8000/static/article/mz/img/ready_pregenancy/rp-2.jpg)
+![](http://localhost:8000/static/article/mz/img/ready_pregenancy/img-2.jpg)
 
 
 

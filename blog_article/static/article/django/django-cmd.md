@@ -49,6 +49,16 @@
 
 ------------
 
+#####&nbsp; 数据导出
+`python manage.py dumpdata > db.json`
+
+`python manage.py dumpdata appname > db.json`
+
+------------
+
+
+#####&nbsp; 数据导入
+`python manage.py loaddata db.json`
 
 <br>
 >以上这些都是常用的命令，具体请查看[官方文档](https://docs.djangoproject.com/zh-hans/2.0/ref/django-admin/)
