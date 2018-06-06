@@ -17,7 +17,7 @@ MAIN_PAGE_NUM = 8
 # article conf
 
 # 默认文章 img 路径
-DEFAULT_ARTICLE_IMG_URL = STATIC_ARCTLE_URL + 'default-article-img.png'
+DEFAULT_ARTICLE_IMG_URL = STATIC_IMG_URL + 'default-article-banner.svg'
 
 
 # 获取正文文件上传路径

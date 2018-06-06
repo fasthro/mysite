@@ -32,7 +32,7 @@
 {% endblock %}
 
 {% block jumbotron %}
-     <div class="jumbotron fh-jumbotron">
+     <div class="jumbotron fh-jumbotron" style="background: url({{ article.bannar_img }}) center;">
          <div class="article-jumbotron-img">
               <div class="article-jumbotron-content text-center">
                   <div class="container">
@@ -78,7 +78,7 @@
 {% block main-footer %}
     {% include 'blog/base/footer.html' %}
 {% endblock %}
-
+<a class="pop-img-box" href=""><img src="" alt=""></a>
 {% if article.get_is_md %}
     {% block js %}
         <script type="text/javascript">

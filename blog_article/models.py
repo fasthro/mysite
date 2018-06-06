@@ -69,6 +69,7 @@ class Article(models.Model):
     title = models.CharField(max_length=100, verbose_name='文章标题')
     subtitle = models.CharField(max_length=100, default='', null=True, blank=True, verbose_name='文章副标题')
     img = models.CharField(max_length=200, default=conf.DEFAULT_ARTICLE_IMG_URL, verbose_name='展示图片')
+    bannar_img = models.CharField(max_length=200, default=conf.DEFAULT_ARTICLE_IMG_URL, verbose_name='文章横幅图片')
     tags = models.ManyToManyField(ArticleTag, verbose_name='标签')
     abstract = models.TextField(verbose_name='文章摘要')
     content_type = models.IntegerField(default=ACT_HTML, choices=ACT_CHOICES, verbose_name='正文内容类型')

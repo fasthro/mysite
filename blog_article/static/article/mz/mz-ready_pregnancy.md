@@ -18,23 +18,23 @@
 
 >跑步5km
 
-![](http://localhost:8000/static/article/mz/img/ready_pregenancy/img-6.png)
+<a class="pop-img-box" href="http://localhost:8000/static/article/mz/img/ready_pregenancy/img-6.png"><img src="http://localhost:8000/static/article/mz/img/ready_pregenancy/img-6-thumbnail.png" alt=""></a>
 
 >压腿
 
-![](http://localhost:8000/static/article/mz/img/ready_pregenancy/img-5.jpg)
+<a class="pop-img-box" href="http://localhost:8000/static/article/mz/img/ready_pregenancy/img-5.jpg"><img src="http://localhost:8000/static/article/mz/img/ready_pregenancy/img-5-thumbnail.jpg" alt=""></a>
 
-![](http://localhost:8000/static/article/mz/img/ready_pregenancy/img-3.jpg)
+<a class="pop-img-box" href="http://localhost:8000/static/article/mz/img/ready_pregenancy/img-3.jpg"><img src="http://localhost:8000/static/article/mz/img/ready_pregenancy/img-3-thumbnail.jpg" alt=""></a>
 
-![](http://localhost:8000/static/article/mz/img/ready_pregenancy/img-4.jpg)
+<a class="pop-img-box" href="http://localhost:8000/static/article/mz/img/ready_pregenancy/img-4.jpg"><img src="http://localhost:8000/static/article/mz/img/ready_pregenancy/img-4-thumbnail.jpg" alt=""></a>
 
 >自己在家运动
 
-![](http://localhost:8000/static/article/mz/img/ready_pregenancy/img-1.jpg)
+<a class="pop-img-box" href="http://localhost:8000/static/article/mz/img/ready_pregenancy/img-1.jpg"><img src="http://localhost:8000/static/article/mz/img/ready_pregenancy/img-1-thumbnail.jpg" alt=""></a>
 
 >下班自己去公园跑步压腿
 
-![](http://localhost:8000/static/article/mz/img/ready_pregenancy/img-2.jpg)
+<a class="pop-img-box" href="http://localhost:8000/static/article/mz/img/ready_pregenancy/img-2.jpg"><img src="http://localhost:8000/static/article/mz/img/ready_pregenancy/img-2-thumbnail.jpg" alt=""></a>
 
 
 

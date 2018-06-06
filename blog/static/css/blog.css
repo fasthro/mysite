@@ -308,7 +308,6 @@ body{
 
 /** article */
 .article-jumbotron-img{
-    background: url(../img/article/article-jumbotron-default.jpg) center;
     min-height: 350px;
     height: 350px;
 }
