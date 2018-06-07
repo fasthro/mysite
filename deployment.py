@@ -6,6 +6,7 @@ from git import Repo
 from django.core import management
 import codecs
 import platform
+import time
 
 cwd = os.getcwd()
 
@@ -99,12 +100,15 @@ if platform.system() == "Linux":
 
         os.system('kill -9 ' + pid)
 
-    print('restart uwsgi')
+    time.sleep(5)
+
+    print('uwsgi --ini uwsgi.ini')
     os.system('uwsgi --ini uwsgi.ini')
 
+    time.sleep(5)
 
     # 重启 nginx
-    print('restart nginx')
+    print('/etc/init.d/nginx restart')
     os.system('/etc/init.d/nginx restart')
 
 print("platform : " + platform.system())
