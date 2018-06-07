@@ -12,7 +12,7 @@ cwd = os.getcwd()
 # 开发服务器
 dev_server = 'localhost:8000'
 # 正式服务器
-live_server = '39.106.221.18'
+live_server = '39.107.245.232'
 
 print('********** 服务器部署开始 ********')
 # print('git pull')
