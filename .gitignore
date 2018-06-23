@@ -1,3 +1,4 @@
+*.pyc
 .idea/
 /static/
 /blog_article/static/article/django/img/
