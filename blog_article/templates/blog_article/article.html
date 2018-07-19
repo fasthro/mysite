@@ -5,7 +5,10 @@
     {% if article.get_is_md %}
         <link href="{% static "editor.md/css/editormd.preview.min.css" %}" rel="stylesheet">
     {% endif %}
+    <!-- 图片预览插件 -->
     <link href="{% static "baguetteBox/baguetteBox.min.css" %}" rel="stylesheet">
+    <!-- 视频插件 -->
+    <link href="{% static "video-js-6.11.0/video-js.min.css" %}" rel="stylesheet">
 {% endblock %}
 
 {% block head-js %}
@@ -23,8 +26,10 @@
 
         <script src="{% static "editor.md/editormd.min.js" %}"></script>
     {% endif %}
-
+    <!-- 图片预览插件 -->
     <script src="{% static "baguetteBox/baguetteBox.min.js" %}"></script>
+    <!-- 视频插件 -->
+    <script src="{% static "video-js-6.11.0/video.min.js" %}"></script>
 {% endblock %}
 
 {% block main-nav %}
@@ -79,10 +84,12 @@
     {% include 'blog/base/footer.html' %}
 {% endblock %}
 <a class="pop-img-box" href=""><img src="" alt=""></a>
-{% if article.get_is_md %}
-    {% block js %}
-        <script type="text/javascript">
+
+{% block js %}
+    <script type="text/javascript">
+        {% if article.get_is_md %}
             $(function() {
+                // makedown 相关
                 var editormdView = editormd.markdownToHTML("md-content", {
                     htmlDecode      : "style,script,iframe",
                     emoji           : true,
@@ -97,9 +104,8 @@
                     fadeOut: true,
                     noScrollbars: true
                 });
+
             });
-
-
-        </script>
-    {% endblock %}
-{% endif %}
+        {% endif %}
+    </script>
+{% endblock %}

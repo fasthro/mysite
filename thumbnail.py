@@ -1,6 +1,6 @@
 # 针对文章内图片进行缩略图生成工具
 # 只生成 img-*.* 的图片
-# python thumbnail.py blog_article/static/article/mz/img/20180526
+# python thumbnail.py blog_article/static/article/mz/img/diary_pregnancy/20180714
 import os
 import sys
 import time

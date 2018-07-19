@@ -43,7 +43,7 @@ class MainView(BaseMixin, ListView):
 
     def get_queryset(self):
         at = ArticleType.objects.get(type_id=const.TYPE_MZ_ID)
-        return Article.objects.all().filter(~Q(type_id=at.id))
+        return Article.objects.all().filter(~Q(type_id=at.id)).order_by('-create_time')
 
 
 # types view
@@ -55,7 +55,7 @@ class TypesView(BaseMixin, ListView):
     def get_queryset(self):
         tid = self.kwargs.get('type_id', '')
         at = ArticleType.objects.get(type_id=tid)
-        return Article.objects.all().filter(type_id=at.id)
+        return Article.objects.all().filter(type_id=at.id).order_by('-create_time')
 
     def get_context_data(self, **kwargs):
         context = super(TypesView, self).get_context_data(**kwargs)
@@ -73,7 +73,7 @@ class TagsView(BaseMixin, ListView):
 
     def get_queryset(self):
         tag = self.kwargs.get('tag_id', '')
-        return Article.objects.all().filter(tags__tag_id=tag)
+        return Article.objects.all().filter(tags__tag_id=tag).order_by('-create_time')
 
     def get_context_data(self, **kwargs):
         context = super(TagsView, self).get_context_data(**kwargs)
